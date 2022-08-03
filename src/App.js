@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import './App.css'
+import Home from './components/Home'
+import Quiz from './components/Quiz'
+import NoMatch from './components/NoMatch'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Arjun's app
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="main-container">
+        <Routes>
+          <Route path="/quizzical" element={<Home Link={Link}/>} />
+          <Route path="/quizzical/quiz" element={<Quiz/>} />
+          <Route path="*" element={<NoMatch useLocation={useLocation}/>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
-export default App;
+export default App

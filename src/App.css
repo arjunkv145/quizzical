@@ -1,38 +1,198 @@
-.App {
+/* TYPOGRAPHY */
+.start-quiz--header, .quiz-container--header, .quiz--questions {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+}
+.start-quiz--btn, 
+.option, 
+.quiz-check-options, 
+.quiz-results--play-again {
+  font-family: inherit;
+}
+.start-quiz--header, .quiz-container--header {
+  font-size: 31.25px;
+  letter-spacing: 1px;
+}
+.start-quiz--description {
+  font-weight: 400;
+  font-size: 16px;
+}
+.start-quiz--btn {
+  font-weight: 500;
+  font-size: 16px;
+}
+.loading-page--text {
+  font-weight: 600;
+  font-size: 24px;
+  color: #293264;
+}
+.quiz--questions {
+  font-size: 16px;
+}
+.option, .option-check {
+  font-weight: 500;
+  font-size: 10.24px;
+}
+.quiz-check-options, .quiz-results--play-again {
+  font-weight: 600;
+  font-size: 10.24px;
+}
+.quiz-results--score {
+  font-weight: 700;
+  font-size: 12.8px;
+}
+
+/* STYLING */
+.start-quiz--header, .quiz-container--header, .start-quiz--description {
+  color: #293264;
+}
+.quiz-container--header {
   text-align: center;
+  padding: .8rem 0;
+  text-decoration: underline;
+}
+.start-quiz--btn {
+  color: #F5F7FB;
+  background: #4D5B9E;
+  padding: 1em 3em;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.quiz--questions {
+  color: #293264;
+}
+.option, .option-check {
+  color: #293264;
+  background: #F5F7FB;
+  border: 1px solid #4D5B9E;
+  border-radius: 20px;
+  padding: .6em 1.6em;
+  cursor: pointer;
+}
+.selected {
+  background: #D6DBF5;
+  border: none;
+}
+.correct {
+  background: #94D7A2;
+  border: none;
+}
+.incorrect {
+  background: #F8BCBC;
+  border: none;
+  opacity: .5;
+}
+.transparent {
+  opacity: .5;
+}
+.quiz-results--score {
+  color: #293264;
+}
+.quiz-check-options, .quiz-results--play-again {
+  background: #4D5B9E;
+  color: #F5F7FB;
+  padding: 1.4em 2.8em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.quiz-results--play-again {
+  padding: 1em 2em;
+}
+.option:hover {
+  background: #D6DBF5;
+}
+.start-quiz--btn:hover,
+.quiz-check-options:hover,
+.quiz-results--play-again:hover {
+  background: #303e82;
+}
+.start-quiz--btn:focus,
+.option:focus,
+.option-check:focus,
+.quiz-check-options:focus,
+.quiz-results--play-again:focus {
+  outline: 2px solid rgba(41, 50, 100, .6);
+  outline-offset: 2px;
+}
+.option-check {cursor: default}
+
+/* LAYOUT */
+
+.main-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.start-quiz {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  width:100%;
+}
+.start-quiz::before {
+  content: '';
+  position: absolute;
+  background: url("./images/start-quiz-blob1.png");
+  background-repeat: no-repeat;
+  width: 148px;
+  height: 118px;
+  bottom: 0;
+  left: 0;
+  z-index: -99;
+}
+.start-quiz::after {
+  content: '';
+  position: absolute;
+  background: url("./images/start-quiz-blob2.png");
+  background-repeat: no-repeat;
+  top: 0;
+  right: 0;
+  width: 156px;
+  height: 140px;
+  z-index: -99;
 }
 
-.App-link {
-  color: #61dafb;
+.loading-page {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 4rem;
 }
+.start-quiz * {margin: 0}
+.start-quiz--header {margin-bottom: .4em}
+.start-quiz--description {margin-bottom: 2em}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quiz-container {
+  width: 90%;
+  max-width: 600px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1.4em 0;
+  display: flex;
+  flex-direction: column;
 }
+.quiz-container * {margin: 0}
+.quiz {
+  padding: 1em 0;
+  border-bottom: 1px solid #DBDEF0;
+}
+.quiz--questions {
+  margin-bottom: .8em;
+}
+/* .quiz--options {} */
+.option, .option-check {margin-right: 1em}
+.quiz-check-options {
+  align-self: center;
+  margin-top: 2em;
+}
+.quiz-results {
+  align-self: center;
+  margin-top: 1.5em;
+}
+.quiz-results--score {margin-right: 2em}
+/* .quiz-results--play-again {} */
